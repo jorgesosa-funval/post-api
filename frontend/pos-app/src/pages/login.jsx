@@ -1,15 +1,18 @@
+import { useNavigate } from "react-router";
 import { login } from "../libs/axios/auth";
 
 
 const Login = () => { 
-
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     const formData = new FormData(e.target)
     const body  = Object.fromEntries(formData.entries())
     try {
-      const {status, data} = login(body);
-      console.log(status)
+      const {status, data} = await login(body);
+       if(data.status === "ok"){
+          navigate('/')
+       }
     } catch (error) {
         console.error(error)
     }

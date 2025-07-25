@@ -10,6 +10,12 @@ export const login = async (body) => {
     }
 }
 
-
+export const logout = async () => {
+    try {
+        const {data, status} = await instance.get('/auth/logout'); 
+    } catch (error) {
+        throw error
+    }
+}
 
 

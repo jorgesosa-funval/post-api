@@ -1,10 +1,6 @@
-import React from 'react'
-import { profile } from '../libs/axios/user'
+import React from 'react' 
 
-export default function Home() {
-
-  profile()
-
+export default function Home() { 
   return (
     <div>
         Home
